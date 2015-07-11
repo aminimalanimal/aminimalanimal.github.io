@@ -3,23 +3,31 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
-		<title>aminimalanimal - portfolio - github</title>
+		<title>aminimalanimal - accessibility - UX Presentation</title>
 		<meta name="description" content=""/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 		<script src="/vendor/modernizr/modernizr.js"></script>
 		<link rel="stylesheet" href="/vendor/normalize.css/normalize.css"/>
-		<link rel="stylesheet" href="/styles/main.css"/>
+		<link rel="stylesheet" href="/styles/presentations.css"/>
 	</head>
 	<body>
-		<h1>aminimalanimal</h1>
-		<p>Under construction. Don't mind my dust. Look—there's a slideshow here to distract you from the nothing: <a href="/presentations/ux_accessibility/index.html">Presentation - Accessibility for UX</a></p>
-		<p>Pattern Library (WIP) scratch is here: <a href="/accessibility/pattern_library/index.html">Accessibility - Pattern Library</a></p>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
 			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
 			
 		</script>
-		<script src="/scripts/main.js"></script>
+		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+		<script>
+			window.remark || document.write('<script src="/vendor/remark.min.js"><\/script>')
+			
+		</script>
+		<script>
+			'use strict';
+			
+			var slideshow = remark.create({
+				sourceUrl: './accessibility_ux.md'
+			});
+			
+		</script>
 	</body>
 </html>

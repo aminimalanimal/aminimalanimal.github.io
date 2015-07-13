@@ -468,8 +468,6 @@ The most popular desktop screen readers are JAWS, NVDA, and VoiceOver. JAWS is W
 
 VoiceOver and NVDA provide some surprisingly different experiences, and attempting to keep them both happy is nearly impossible. This is the Wild West of the internet right now.
 
-NVDA gives the user the ability to hear items they're hovering over as well.
-
 I've never used Window-Eyes or ChromeVox.
 
 --
@@ -549,11 +547,141 @@ NVDA gives the user the ability to hear items they're hovering over as well, eve
 
 
 
+---
+class: middle inverse
+layout: false
+
+## How to Make Screen Readers **Happy**
+
+
 
 ---
-class: middle, inverse
+class: middle inverse
+layout: false
 
-## The Importance of a One to One Experience
+## Use Landmarks and Headings
+
+Users generally rely on headings and landmarks to scan the page.
+
+- landmarks allow them to jump from area to area
+	- In OS X VoiceOver, press left and right arrow together to turn on QuickNav, then press up and left arrows to cycle through webspots, then press up or down to navigate to web spots of your choice
+- `control` + `option` + `command` + `h` allows users to jump to the next heading
+
+
+---
+template: landmarksandheadings
+class: middle inverse
+layout: true
+
+.left-column[
+
+## Landmarks and Headings
+
+]
+
+---
+count: false
+
+.right-column[
+
+### Types of Landmarks
+
+- banner (header, **only one**)
+- search
+- navigation
+- main (**only one**)
+- complementary
+- contentinfo (footer, **only one**)
+
+In addition to these landmarks, it can be helpful if we **label them** based on something on the page so that when the user jumps to that section, they hear what it is.
+
+> find link to demonstrate
+
+]
+
+
+---
+count: false
+
+.right-column[
+
+### How Heading Levels Work
+
+_Like your family tree (presumably)_
+
+Headings form a tree starting at `h1`. Headings that are nested deeper are considered _within_ the previous heading's section, and cannot skip heading levels.
+
+![Diagram of Heading Level Tree](/assets/images/presentations/heading_level_tree.svg)
+
+]
+
+
+???
+
+There is generally only one `h1`.
+
+So, this would be read h1 > h2 > h3> h4> h5> h6 > back up to the second h3 and back down again.
+
+
+
+---
+class: middle inverse
+layout: false
+
+## **Good Idea:** Craft a Linear Experience
+
+- element order, within a module/component, should be arranged left-to-right top-to-bottom (assuming it's an English page)
+- information that's necessary to the user should be presented in a logical and upfront manner.
+
+
+
+---
+class: middle inverse
+
+## _Bad Idea:_ Provide Important Information Out of Order
+
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_2">
+		</div>
+	</div>
+	<button type="button">Submit</button>
+	<small>Your mobile phone number is not required. If you give us your mobile phone number, we'll sell it to our partners and they will call you. So much.</small>
+</form>
+
+???
+
+Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
+
+
+
+
+
+---
+class: middle inverse
+layout: false
+
+## **Good Idea:** Provide a one-to-one experience
+
+
+
+
+---
+class: middle inverse
+
+## _Bad Idea:_ Hide Content Solely for Screen Reader Users
 
 Everything important (non-decorative) you are able to see, you should be able hear and touch or hover over.
 
@@ -569,39 +697,11 @@ Nearly everything you hear should have a visible on-page component that's relate
 
 (Turn on VO and read through this page)
 
+(after)
 
+So what just happened there is I used a CSS technique to completely hide a passage of text from sighted users. This is a pattern that we started adopting when we realized that we could explain things to screen readers that the visual design just wouldn't allow us to explain to sighted users. Ultimately, the best practice is just to not put yourself in a position in which you feel you need that sort of thing.
 
-
-
-
-
-
-
-
-
-
-
----
-class: middle, inverse
-
-## Scanning: Landmarks and Headings
-
-Users generally rely on headings and landmarks to scan the page.
-
-- landmarks allow them to jump from area to area
-- within these areas, it's best that the experience is linear
-
-
-
-
-
-### Types of Landmarks
-
-
-
-
-
-### How Heading Levels Work
+It's likely that this hidden content will be missed in future CMS updates, or that it was never integrated at all.
 
 
 
@@ -609,54 +709,102 @@ Users generally rely on headings and landmarks to scan the page.
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-## Skip To Link
+## **Good Idea:** Manage Focus Only When Necessary
 
-- jumping past redundant elements and navigation, etc.
-	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
+It's really nice to be able to look around the page as much as we want, isn't it? Leaving focus alone ensures screen reader users can do that, too.
 
+Now and then, we'll send the user to a modal. When that happens and the page gets an overlay placed on top, it's nice to bring them along with us. This is one of the few times we actually want to manage their focus.
 
+---
+class: middle inverse
 
+## _Bad Idea:_ Create Focus Traps
 
+> We thought it'd be really cool to start them out in the search field and then not let them leave, 'cause the whole point is just filtering search results, right? **Super Convenient UX!**
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-## The Importance of a Linear Experience
+## _Bad Idea:_ Redirect Focus Instantly and Unexpectedly
 
-- element order, within a module/component, is arranged left-to-right top-to-bottom (assuming it's an English page).
-- information that's necessary to the user should be presented in a logical and upfront manner. Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
-	- EXAMPLE: form with Terms and Conditions below the Submit button "your email address is optional. If you give us your email address, we will send you offers from our partners."
+<form class="demo">
+	<div class="field">
+		<fieldset>
+			<legend>Phone Number</legend>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_1">Area Code</label>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_2">Prefix</label>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_3">Last 4 Digits</label>
+			<div class="input_container">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_1" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_2" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_3" maxlength="4">
+			</div>
+		</fieldset>
+	</div>
+</form>
 
+---
+class: middle inverse
 
+## **Good Idea:** Obvious Focus States
 
+They're required! Embrace these. Make them cool!
 
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_2">
+		</div>
+	</div>
+</form>
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-## Staying Focused
+## _Bad Idea:_ No Focus States or Hard-to-See Focus States
 
-- we always have to keep track of a user's focus
-	- don't instantly place them on elements because they can miss information
-		- EXAMPLE: instantly focused find field
-	- no locking them on elements
-		- EXAMPLE: a worse focused find field
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="" type="text" id="input_2">
+		</div>
+	</div>
+</form>
 
 
 
-### Don't redirect focus
-
-- EXAMPLE: three input fields for phone number
 
 
-### The Importance of Obvious Focus States
 
-- focus states focus states focus states
-	- embrace these. make them cool!
+
+
+
 
 
 
@@ -782,64 +930,17 @@ class: middle, inverse
 
 ##### Naming Conventions
 ##### Error Messaging
-##### Tooltips
-
-- multiple constraints:
-	- we can either treat these as modals
-	- or have them read immediately
-
 
 
 
 
 ---
-class: middle, inverse
-### Tables
-
-so tricky.
+class: middle inverse
 
 
+## **Good Idea:** Skip To Link
 
+- jumping past redundant elements and navigation, etc.
+	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
 
----
-class: middle, inverse
-### Dropdown Menus
-
-
-
-
-
----
-class: middle, inverse
-
-### Modals
-
-
-
-
----
-class: middle, inverse
-
-### Expandable Content
-
-- it's best to keep the button that expands content 
-
-
-
-
-
----
-class: middle, inverse
-
-### Show More...
-
-- ick
-
-
-
-
----
-class: middle, inverse
-
-### Replaceable content
 

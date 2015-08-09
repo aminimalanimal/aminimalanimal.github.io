@@ -15,29 +15,29 @@
 		<article>
 			<h1>Pattern Library - early drafts</h1>
 			<p>I'm still in the process of making design decisions and altering the architecture of this site, so right now, we're left solely with some basic, (but properly coded) elements:</p>
-			<div class="field">
-				<div class="label_container">
-					<label for="input" class="label">label</label>
+			<div class="component-input-field">
+				<div class="label-container">
+					<label for="input" class="label">Input Field</label>
 				</div>
-				<div class="input_container">
+				<div class="input-container">
 					<input id="input" type="text" name="text" aria-describedby="disclosure" class="input"/>
 				</div>
 				<div id="disclosure" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<div class="field">
-				<div class="label_container">
-					<label for="textarea" class="label">textarea</label>
+			<div class="component-textarea">
+				<div class="label-container">
+					<label for="textarea" class="label">Textarea</label>
 				</div>
-				<div class="input_container">
-					<textarea id="textarea" name="textarea" aria-describedby="disclosure_textarea" class="input"></textarea>
+				<div class="input-container">
+					<textarea id="textarea" name="textarea" aria-describedby="disclosure-textarea" class="input"></textarea>
 				</div>
-				<div id="disclosure_textarea" class="disclosure hidden">div.disclosure</div>
+				<div id="disclosure-textarea" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<div class="field">
-				<div class="label_container">
+			<div class="component-select">
+				<div class="label-container">
 					<label for="select" class="label">Select</label>
 				</div>
-				<div class="input_container">
+				<div class="input-container">
 					<select id="select" name="select">
 						<option selected="selected">default</option>
 						<option>option 1</option>
@@ -58,69 +58,65 @@
 					</select>
 				</div>
 			</div>
-			<div class="field">
-				<div class="input_container">
-					<input id="checkbox" type="checkbox" name="checkbox" aria-describedby="disclosure_checkbox" class="checkbox"/>
-				</div>
-				<div class="label_container">
-					<label for="checkbox" class="label">checkbox</label>
-				</div>
-				<div id="disclosure_checkbox" class="disclosure hidden">div.disclosure</div>
+			<div class="component-checkbox">
+				<input id="checkbox" type="checkbox" name="checkbox" aria-describedby="disclosure-checkbox"/><span class="label-container">
+					<label for="checkbox">Checkbox</label></span>
+				<div id="disclosure-checkbox" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<div class="field">
+			<div class="component-radio-group">
 				<fieldset>
 					<legend>Radio Button Group</legend>
-					<div class="radio_container">
-						<input id="radio_button_1" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
-							<label for="radio_button_1" class="label">Radio button 1</label></span>
+					<div class="radio">
+						<input id="radio-button-1" type="radio" name="radio-group" aria-describedby="disclosure-radio-button-group"/><span class="label-container">
+							<label for="radio-button-1">Radio button 1</label></span>
 					</div>
-					<div class="radio_container">
-						<input id="radio_button_2" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
-							<label for="radio_button_2" class="label">Radio button 2</label></span>
+					<div class="radio">
+						<input id="radio-button-2" type="radio" name="radio-group" aria-describedby="disclosure-radio-button-group"/><span class="label-container">
+							<label for="radio-button-2">Radio button 2</label></span>
 					</div>
-					<div class="radio_container">
-						<input id="radio_button_3" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
-							<label for="radio_button_3" class="label">Radio button 3</label></span>
+					<div class="radio">
+						<input id="radio-button-3" type="radio" name="radio-group" aria-describedby="disclosure-radio-button-group"/><span class="label-container">
+							<label for="radio-button-3">Radio button 3</label></span>
 					</div>
-					<div class="radio_container">
-						<input id="radio_button_4" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
-							<label for="radio_button_4" class="label">Radio button 4</label></span>
+					<div class="radio">
+						<input id="radio-button-4" type="radio" name="radio-group" aria-describedby="disclosure-radio-button-group"/><span class="label-container">
+							<label for="radio-button-4">Radio button 4</label></span>
 					</div>
 				</fieldset>
-				<div id="disclosure_radio_button_group" class="disclosure hidden">div.disclosure</div>
+				<div id="disclosure-radio-button-group" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<div class="field">
+			<div class="component-checkbox-group">
 				<fieldset>
 					<legend>Checkbox Group</legend>
-					<div class="input_container">
-						<input id="checkbox_1" type="checkbox" name="checkbox_1" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
-							<label for="checkbox_1" class="label">checkbox 1</label></span>
+					<div class="checkbox">
+						<input id="checkbox-1" type="checkbox" name="checkbox-1" aria-describedby="disclosure-checkbox-group"/><span class="label-container">
+							<label for="checkbox-1">Checkbox 1</label></span>
 					</div>
-					<div class="input_container">
-						<input id="checkbox_2" type="checkbox" name="checkbox_2" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
-							<label for="checkbox_2" class="label">checkbox 2</label></span>
+					<div class="checkbox">
+						<input id="checkbox-2" type="checkbox" name="checkbox-2" aria-describedby="disclosure-checkbox-group"/><span class="label-container">
+							<label for="checkbox-2">Checkbox 2</label></span>
 					</div>
-					<div class="input_container">
-						<input id="checkbox_3" type="checkbox" name="checkbox_3" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
-							<label for="checkbox_3" class="label">checkbox 3</label></span>
+					<div class="checkbox">
+						<input id="checkbox-3" type="checkbox" name="checkbox-3" aria-describedby="disclosure-checkbox-group"/><span class="label-container">
+							<label for="checkbox-3">Checkbox 3</label></span>
 					</div>
-					<div class="input_container">
-						<input id="checkbox_4" type="checkbox" name="checkbox_4" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
-							<label for="checkbox_4" class="label">checkbox 4</label></span>
+					<div class="checkbox">
+						<input id="checkbox-4" type="checkbox" name="checkbox-4" aria-describedby="disclosure-checkbox-group"/><span class="label-container">
+							<label for="checkbox-4">Checkbox 4</label></span>
 					</div>
 				</fieldset>
-				<div id="disclosure_checkbox_group" class="disclosure hidden">div.disclosure</div>
+				<div id="disclosure-checkbox-group" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<div class="field">
-				<div class="label_container">
-					<label for="range" class="label">range</label>
+			<div class="component-range">
+				<div class="label-container">
+					<label for="range">Range</label>
 				</div>
-				<div class="input_container">
-					<input id="range" name="range" max="100" min="1" type="range" aria-describedby="disclosure_range" class="range"/>
-				</div>
-				<div id="disclosure_range" class="disclosure hidden">div.disclosure</div>
+				<input id="range" name="range" max="100" min="1" type="range" aria-describedby="disclosure-range"/>
+				<div id="disclosure-range" class="disclosure hidden">div.disclosure</div>
 			</div>
-			<button type="button" class="button">button</button>
+			<div class="component-button">
+				<button type="button">button</button>
+			</div>
 			
 		</article>
 	</body>

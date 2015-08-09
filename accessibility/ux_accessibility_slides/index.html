@@ -3,25 +3,26 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
-		<title>aminimalanimal - portfolio - github</title>
+		<title>aminimalanimal - accessibility - UX Presentation</title>
 		<meta name="description" content=""/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 		<script src="/vendor/modernizr/modernizr.js"></script>
 		<link rel="stylesheet" href="/vendor/normalize.css/normalize.css"/>
 		<link rel="stylesheet" href="/style.css"/>
 	</head>
-	<body>
-		<header role="banner">
-			<h1>aminimalanimal</h1>
-		</header>
-		<p>Not much here yet. Don't mind my dust.</p>
-		<nav role="navigation" class="nav_index"><a href="/accessibility/ux_accessibility_slides/index.html">Presentation - Accessibility for UX</a><a href="/accessibility/pattern_library/index.html">Pattern Library for Accessibility</a><a href="/experiments/shapes/index.html">Experiments - Shapes</a>
-		</nav>
-		<footer role="contentinfo">Page created by James Curd, 2015</footer>
+	<body class="presentation">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
 			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
+			
+		</script>
+		<script src="/vendor/remark.min.js"></script>
+		<script>
+			'use strict';
+			
+			var slideshow = remark.create({
+				sourceUrl: './assets/accessibility_ux.md'
+			});
 			
 		</script>
 	</body>

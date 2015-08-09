@@ -1,137 +1,127 @@
 
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="utf-8"/>
-		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
 		<title>aminimalanimal - accessibility - pattern library</title>
 		<meta name="description" content=""/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script src="/vendor/modernizr/modernizr.js"></script>
 		<link rel="stylesheet" href="/vendor/normalize.css/normalize.css"/>
 		<link rel="stylesheet" href="/vendor/prism/themes/prism-okaidia.css"/>
-		<link rel="stylesheet" href="/styles/main.css"/>
+		<link rel="stylesheet" href="/style.css"/>
 	</head>
 	<body>
-		<article data-field-layout="flex" data-field-style="diagram" class="pattern_library-closer_look">
-			<header>
-				<h3>Text field</h3>
-				<p>(w/tooltip, disclosure, and error message containers)</p>
-			</header>
-			<section>
-				<h4>Diagram</h4>
-				<p>insert svg here</p>
-			</section>
-			<section>
-				<h4>Example</h4>
-				<div>
-					<div class="field">
-						<div class="label_container">
-							<label for="input" class="label">label</label>
-							<button role="button" class="button button-tooltip">info</button>
-						</div>
-						<div class="input_container">
-							<input id="input" type="text" name="text" aria-describedby="disclosure" placeholder="input" class="input"/>
-							<button role="button" class="button button-extra_feature">button</button>
-						</div>
-						<div id="error_message" class="error_message">div.error_message</div>
-						<div id="disclosure" class="disclosure">div.disclosure</div>
-					</div>
+		<article>
+			<h1>Pattern Library - early drafts</h1>
+			<p>I'm still in the process of making design decisions and altering the architecture of this site, so right now, we're left solely with some basic, (but properly coded) elements:</p>
+			<div class="field">
+				<div class="label_container">
+					<label for="input" class="label">label</label>
 				</div>
-			</section>
-			<section class="section_code">
-				<h4>Code</h4>
-				<h5>HTML</h5>
-				<pre><code class="language-markup">&lt;div class="field"&gt;
-	&lt;div class="label_container"&gt;
-		&lt;label for="input" class="label"&gt;
-			label
-		&lt;/label&gt;
-		&lt;button class="button button_tooltip"&gt;
-			info
-		&lt;/button&gt;
-	&lt;/div&gt;
-	&lt;div class="input_container"&gt;
-		&lt;input
-			id="input"
-			type="text"
-			name="text"
-			aria-describedby="disclosure"
-			placeholder="input"
-			class="input"
-		&gt;
-		&lt;button class="button button_extra_feature"&gt;
-			button
-		&lt;/button&gt;
-	&lt;/div&gt;
-	&lt;div id="error_message" class="error_message"&gt;
-		div.error_message
-	&lt;/div&gt;
-	&lt;div id="disclosure" class="disclosure"&gt;
-		div.disclosure
-	&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-				<h5>Jade</h5>
-				<pre><code class="language-jade">div.field
-	div.label_container
-		label.label(for="input") label
-		button.button.button_tooltip info
-	div.input_container
-		input.input(
-			id="input"
-			type="text"
-			name="text"
-			aria-describedby="disclosure"
-			placeholder="input"
-			)
-		button.button.button_extra_feature button
-	div.error_message#error_message div.error_message
-	div.disclosure#disclosure div.disclosure
-</code></pre>
-				<h5>CSS</h5>
-				<pre><code class="language-css">.field {
-	border: solid 1px #66d9ef;
-	max-width: 20em;
-}
-
-.label_container {
-	border: solid 1px #a6e22e;
-	margin: 4px;
-	overflow: hidden;
-}
-</code></pre>
-				<h5>Sass</h5>
-				<pre><code class="language-scss">.field
-	border: solid 1px $color_monokai-blue
-	max-width: 20em
-
-.label_container
-	border: solid 1px $color_monokai-green
-	margin: 4px
-	overflow: hidden
-</code></pre>
-				<h5>JavaScript</h5>
-				<pre><code class="language-javascript">var thing = function(thing) {
-	return thing;
-};
-
-thing(anotherThing);
-</code></pre>
-				<h5>Coffeescript</h5>
-				<pre><code class="language-coffeescript">thing = (thing) ->
-	return thing
-
-thing(anotherThing)</code></pre>
-			</section>
-		</article>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
+				<div class="input_container">
+					<input id="input" type="text" name="text" aria-describedby="disclosure" class="input"/>
+				</div>
+				<div id="disclosure" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="field">
+				<div class="label_container">
+					<label for="textarea" class="label">textarea</label>
+				</div>
+				<div class="input_container">
+					<textarea id="textarea" name="textarea" aria-describedby="disclosure_textarea" class="input"></textarea>
+				</div>
+				<div id="disclosure_textarea" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="field">
+				<div class="label_container">
+					<label for="select" class="label">Select</label>
+				</div>
+				<div class="input_container">
+					<select id="select" name="select">
+						<option selected="selected">default</option>
+						<option>option 1</option>
+						<option>option 2</option>
+						<option>option 3</option>
+						<option>option 4</option>
+						<option>option 5</option>
+						<option>option 6</option>
+						<option>option 7</option>
+						<option>option 8</option>
+						<option>option 9</option>
+						<option>option 10</option>
+						<option>option 11</option>
+						<option>option 12</option>
+						<option>option 13</option>
+						<option>option 14</option>
+						<option>option 15</option>
+					</select>
+				</div>
+			</div>
+			<div class="field">
+				<div class="input_container">
+					<input id="checkbox" type="checkbox" name="checkbox" aria-describedby="disclosure_checkbox" class="checkbox"/>
+				</div>
+				<div class="label_container">
+					<label for="checkbox" class="label">checkbox</label>
+				</div>
+				<div id="disclosure_checkbox" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="field">
+				<fieldset>
+					<legend>Radio Button Group</legend>
+					<div class="radio_container">
+						<input id="radio_button_1" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
+							<label for="radio_button_1" class="label">Radio button 1</label></span>
+					</div>
+					<div class="radio_container">
+						<input id="radio_button_2" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
+							<label for="radio_button_2" class="label">Radio button 2</label></span>
+					</div>
+					<div class="radio_container">
+						<input id="radio_button_3" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
+							<label for="radio_button_3" class="label">Radio button 3</label></span>
+					</div>
+					<div class="radio_container">
+						<input id="radio_button_4" type="radio" name="radio_group" aria-describedby="disclosure_radio_button_group" class="radio"/><span class="label_container">
+							<label for="radio_button_4" class="label">Radio button 4</label></span>
+					</div>
+				</fieldset>
+				<div id="disclosure_radio_button_group" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="field">
+				<fieldset>
+					<legend>Checkbox Group</legend>
+					<div class="input_container">
+						<input id="checkbox_1" type="checkbox" name="checkbox_1" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
+							<label for="checkbox_1" class="label">checkbox 1</label></span>
+					</div>
+					<div class="input_container">
+						<input id="checkbox_2" type="checkbox" name="checkbox_2" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
+							<label for="checkbox_2" class="label">checkbox 2</label></span>
+					</div>
+					<div class="input_container">
+						<input id="checkbox_3" type="checkbox" name="checkbox_3" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
+							<label for="checkbox_3" class="label">checkbox 3</label></span>
+					</div>
+					<div class="input_container">
+						<input id="checkbox_4" type="checkbox" name="checkbox_4" aria-describedby="disclosure_checkbox_group" class="checkbox"/><span class="label_container">
+							<label for="checkbox_4" class="label">checkbox 4</label></span>
+					</div>
+				</fieldset>
+				<div id="disclosure_checkbox_group" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="field">
+				<div class="label_container">
+					<label for="range" class="label">range</label>
+				</div>
+				<div class="input_container">
+					<input id="range" name="range" max="100" min="1" type="range" aria-describedby="disclosure_range" class="range"/>
+				</div>
+				<div id="disclosure_range" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<button type="button" class="button">button</button>
 			
-		</script>
-		<script src="/vendor/prism/prism.js"></script>
-		<script src="/vendor/prism/components/prism-jade.min.js"></script>
-		<script src="/vendor/prism/components/prism-scss.min.js"></script>
-		<script src="/vendor/prism/components/prism-coffeescript.min.js"></script>
+		</article>
 	</body>
 </html>

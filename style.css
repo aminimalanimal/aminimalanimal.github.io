@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
 html {
   background: #23241f;
   box-sizing: border-box;
@@ -364,8 +367,6 @@ article.pattern_library-closer_look > header, article.pattern_library-closer_loo
   padding: 2em; }
 
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 body.presentation {
   color: #23241f;
   font-family: 'Droid Serif';

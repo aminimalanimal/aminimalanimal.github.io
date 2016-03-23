@@ -1,0 +1,162 @@
+
+<html lang="en" class="no-js">
+	<head>
+		<title>aminimalanimal - accessibility - pattern library</title>
+		<meta name="description" content=""/>
+		<meta charset="utf-8"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<script src="/vendor/modernizr/modernizr.js"></script>
+		<link rel="stylesheet" href="/vendor/normalize.css/normalize.css"/>
+		<link rel="stylesheet" href="/vendor/prism/themes/prism-okaidia.css"/>
+		<link rel="stylesheet" href="/style.css"/>
+	</head>
+	<body>
+		<article>
+			<h1>Pattern Library - early drafts</h1>
+			<p>I'm still in the process of making design decisions and altering the architecture of this site, so right now, we're left solely with some basic, (but properly coded) elements:</p>
+			<h2>Basic Elements</h2>
+			<div class="component-input-field">
+				<div class="label-container">
+					<label for="input" class="label">Input Field</label>
+				</div>
+				<div class="input-container">
+					<input id="input" type="text" name="text" aria-describedby="disclosure" class="input"/>
+				</div>
+				<div id="disclosure" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-textarea">
+				<div class="label-container">
+					<label for="textarea" class="label">Textarea</label>
+				</div>
+				<div class="input-container">
+					<textarea id="textarea" name="textarea" aria-describedby="disclosure-textarea" class="input"></textarea>
+				</div>
+				<div id="disclosure-textarea" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-native-select">
+				<div class="label-container">
+					<label for="native-select" class="label">Native Select</label>
+				</div>
+				<div class="input-container">
+					<select id="native-select" name="native-select">
+						<option selected="selected">default</option>
+						<option>option 1</option>
+						<option>option 2</option>
+						<option>option 3</option>
+						<option>option 4</option>
+						<option>option 5</option>
+						<option>option 6</option>
+						<option>option 7</option>
+						<option>option 8</option>
+						<option>option 9</option>
+						<option>option 10</option>
+						<option>option 11</option>
+						<option>option 12</option>
+						<option>option 13</option>
+						<option>option 14</option>
+						<option>option 15</option>
+					</select>
+				</div>
+			</div>
+			<div class="component-native-checkbox">
+				<input id="native-checkbox" type="checkbox" name="native-checkbox" aria-describedby="disclosure-native-checkbox"/><span class="label-container">
+					<label for="native-checkbox">Native Checkbox</label></span>
+				<div id="disclosure-checkbox" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-native-radio-group">
+				<fieldset>
+					<legend>Native Radio Button Group</legend>
+					<div class="native-radio">
+						<input id="native-radio-button-1" type="radio" name="native-radio-group" aria-describedby="disclosure-native-radio-button-group"/><span class="label-container">
+							<label for="native-radio-button-1">Radio button 1</label></span>
+					</div>
+					<div class="native-radio">
+						<input id="native-radio-button-2" type="radio" name="native-radio-group" aria-describedby="disclosure-native-radio-button-group"/><span class="label-container">
+							<label for="native-radio-button-2">Radio button 2</label></span>
+					</div>
+					<div class="native-radio">
+						<input id="native-radio-button-3" type="radio" name="native-radio-group" aria-describedby="disclosure-native-radio-button-group"/><span class="label-container">
+							<label for="native-radio-button-3">Radio button 3</label></span>
+					</div>
+					<div class="native-radio">
+						<input id="native-radio-button-4" type="radio" name="native-radio-group" aria-describedby="disclosure-native-radio-button-group"/><span class="label-container">
+							<label for="native-radio-button-4">Radio button 4</label></span>
+					</div>
+				</fieldset>
+				<div id="disclosure-native-radio-button-group" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-native-checkbox-group">
+				<fieldset>
+					<legend>Native Checkbox Group</legend>
+					<div class="native-checkbox">
+						<input id="native-checkbox-1" type="checkbox" name="native-checkbox-1" aria-describedby="disclosure-native-checkbox-group"/><span class="label-container">
+							<label for="native-checkbox-1">Checkbox 1</label></span>
+					</div>
+					<div class="native-checkbox">
+						<input id="native-checkbox-2" type="checkbox" name="native-checkbox-2" aria-describedby="disclosure-native-checkbox-group"/><span class="label-container">
+							<label for="native-checkbox-2">Checkbox 2</label></span>
+					</div>
+					<div class="native-checkbox">
+						<input id="native-checkbox-3" type="checkbox" name="native-checkbox-3" aria-describedby="disclosure-native-checkbox-group"/><span class="label-container">
+							<label for="native-checkbox-3">Checkbox 3</label></span>
+					</div>
+					<div class="native-checkbox">
+						<input id="native-checkbox-4" type="checkbox" name="native-checkbox-4" aria-describedby="disclosure-native-checkbox-group"/><span class="label-container">
+							<label for="native-checkbox-4">Checkbox 4</label></span>
+					</div>
+				</fieldset>
+				<div id="disclosure-native-checkbox-group" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-range">
+				<div class="label-container">
+					<label for="range">Range</label>
+				</div>
+				<input id="range" name="range" max="100" min="0" step="1" type="range" aria-describedby="disclosure-range"/>
+				<div id="disclosure-range" class="disclosure hidden">div.disclosure</div>
+			</div>
+			<div class="component-button">
+				<button type="button">button</button>
+			</div>
+			<h2>Aria Elements</h2>
+			<div class="component-aria-listbox">
+				<div class="label-container"><span class="label">aria-created select. button + listbox</span></div>
+				<div class="input-container">
+					<button aria-controls="aria-select-listbox" aria-describedby="disclosure-aria-listbox" aria-expanded="true" data-display="aria-listbox-value" data-name="aria-listbox" tabindex="0">default</button>
+					<div id="aria-select-listbox" role="listbox" class="options">
+						<div aria-selected="true" role="option" tabindex="0" class="option">default</div>
+						<div role="option" class="option">option 1</div>
+						<div role="option" class="option">option 2</div>
+						<div role="option" class="option">option 3</div>
+						<div role="option" class="option">option 4</div>
+						<div role="option" class="option">option 5</div>
+						<div role="option" class="option">option 6</div>
+					</div>
+				</div>
+				<div class="component-disclosure"><span aria-hidden="true" class="disclosure-triangle"></span>
+					<div id="disclosure-listbox" class="disclosure">div.disclosure</div>
+				</div>
+				<input name="aria-listbox" type="hidden" value="aria-listbox-value"/>
+			</div>
+			<div aria-checked="false" aria-describedby="disclosure-aria-checkbox" data-name="aria-checkbox" data-value="aria-checkbox-value" role="checkbox" tabindex="0" class="component-aria-checkbox"><span class="checkbox"></span><span class="label">aria checkbox</span>
+				<div id="disclosure-checkbox" class="disclosure hidden">div.disclosure</div>
+				<input name="aria-checkbox" type="hidden" value="aria-checkbox-value"/>
+			</div>
+			<div data-name="aria-radio-group" data-value="aria-radio-group-value" role="radiogroup" class="component-aria-radio-group">
+				<div aria-checked="true" aria-describedby="disclosure-aria-radio" role="radio" tabindex="0" class="radio-container"><span class="radio"></span><span class="label">aria radio</span></div>
+				<div aria-checked="false" aria-describedby="disclosure-aria-radio" role="radio" tabindex="-1" class="radio-container"><span class="radio"></span><span class="label">aria radio</span></div>
+				<div aria-checked="false" aria-describedby="disclosure-aria-radio" role="radio" tabindex="-1" class="radio-container"><span class="radio"></span><span class="label">aria radio</span></div>
+				<div id="disclosure-aria-radio" class="disclosure hidden">div.disclosure</div>
+				<input name="aria-radio-group" type="hidden" value="aria-radio-group-value"/>
+			</div>
+			<div data-name="aria-checkbox-group" data-value="aria-checkbox-group-value" role="checkboxgroup" class="component-aria-checkbox-group">
+				<div aria-checked="false" aria-describedby="disclosure-aria-checkbox" role="checkbox" tabindex="0" class="checkbox-container"><span class="checkbox"></span><span class="label">aria checkbox</span></div>
+				<div aria-checked="false" aria-describedby="disclosure-aria-checkbox" role="checkbox" tabindex="0" class="checkbox-container"><span class="checkbox"></span><span class="label">aria checkbox</span></div>
+				<div aria-checked="false" aria-describedby="disclosure-aria-checkbox" role="checkbox" tabindex="0" class="checkbox-container"><span class="checkbox"></span><span class="label">aria checkbox</span></div>
+				<div id="disclosure-aria-checkbox" class="disclosure hidden">div.disclosure</div>
+				<input name="aria-checkbox-group" type="hidden" value="aria-checkbox-group-value"/>
+			</div>
+			
+		</article>
+	</body>
+</html>
